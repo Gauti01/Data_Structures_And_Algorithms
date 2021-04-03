@@ -1,0 +1,42 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<stdlib.h>
+int Ispalindrome(int num){
+    int reverse;
+    int original_num=num;
+    while(num!=0){
+        reverse=reverse*10 + num%10;
+        num=num/10;
+    }
+    printf("Reversed number is:%d",reverse);
+    if(reverse==original_num){
+        return 1;
+    }
+    
+    else{
+        return 0;
+    }
+    
+}
+
+int main() {
+	int number;
+	printf("Enter the number you want to check\n");
+	scanf("%d",&number);
+	if(Ispalindrome(number)){
+	    printf("\nAnd Its palindrome\n");
+	}
+	
+	else{
+	    
+	    printf("\nAnd Its Not a palindrome");
+	}
+	return 0;
+}
