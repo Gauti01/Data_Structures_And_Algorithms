@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+//traversal
+void traversal(int arr[],int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+int IndInsertion(int arr[],int size,int element,int capacity,int index){
+    int i;
+    if(index>=capacity)
+    return -1;
+    
+    for(i=size-1;i>=index;i--)
+    {
+       arr[i+1]=arr[i]; 
+        
+    }
+    
+    arr[index]=element;
+    return 1;
+}
+int main()
+{
+    int arr[100]={23,54,76,89,9,5};
+    int size=6;
+    int capacity=100;
+    int index=4;
+    int element=102;
+    traversal(arr,size);
+    IndInsertion(arr,size,element,capacity,index);
+    size=size+1;
+    traversal(arr,size);
+    return 0;
+}
