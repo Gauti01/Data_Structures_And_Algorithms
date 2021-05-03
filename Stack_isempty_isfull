@@ -1,0 +1,65 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<stdlib.h>
+struct stack{
+    int size;
+    int top;
+    int *arr;
+};
+int IsEmpty(struct stack *ptr){
+    if(ptr->top==-1)
+    return 1;
+    else
+    return 0;
+}
+
+int IsFull(struct stack * ptr){
+    if(ptr->top==ptr->size-1)
+    return 1;
+    else
+    return 0;
+    
+}
+int main()
+{
+    /*struct stack s;
+    s.size=80;
+    s.top=-1;
+    s.arr=(int *)malloc(s.size*sizeof(int));*/
+    
+    struct stack *s=(struct stack*)malloc(sizeof(struct stack));
+    
+    s->size=80;
+    s->top=-1;
+    s->arr=(int *)malloc(s->size*sizeof(int));
+    
+    //put some elements
+   // s->arr[0]=10;
+    //s->top++;
+    //s->arr[1]=67;
+    //s->top++;
+    
+    if(IsEmpty(s))
+        printf("The stack is Empty\n");
+        else
+        printf("The satck is not empty\n");
+    
+    
+    if(IsFull(s))
+        printf("The stack is full\n");
+    else
+    printf("The stack is not full\n");
+        
+    
+} 
+   
+    
+
+    
