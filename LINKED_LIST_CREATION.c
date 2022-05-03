@@ -5,7 +5,6 @@ struct ListNode{
     struct ListNode* next;
 }
 
-
 PRITNLIST(struct ListNode* n){
     while(n!=NULL){
         printf("%d\t",n->data);
